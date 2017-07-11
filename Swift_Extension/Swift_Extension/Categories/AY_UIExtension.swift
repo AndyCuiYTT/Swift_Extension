@@ -15,43 +15,73 @@
 import UIKit
 
 // 宽高相关
-var kScreenWidth = UIScreen.main.bounds.width
-var kScreenHeight = UIScreen.main.bounds.height
+fileprivate var kScreenWidth = UIScreen.main.bounds.width
+fileprivate var kScreenHeight = UIScreen.main.bounds.height
+fileprivate var kTextFont = UIFont.systemFont(ofSize: 13)
+fileprivate var kTextColor = UIColor.lightGray
 
+
+// MARK: UILabel
 extension UILabel {
     
+    /// 创建 label 对象,设置初始值:font,textColor
+    ///
+    /// - Parameter title: label 显示内容
+    /// - Returns: 当前 label 对象
     class func ay_getLabel(_ title: String) -> UILabel {
         let label = UILabel()
         label.text = title
+        label.font = kTextFont
+        label.textColor = kTextColor
         return label
     }
     
+    /// 设置 label 文字颜色
+    ///
+    /// - Parameter textColor: 文字颜色
+    /// - Returns: 当前 label 对象
     func ay_setTextColor(_ textColor: UIColor) -> UILabel {
         self.textColor = textColor
         return self
     }
-    
+
+    /// 设置 label 文字字体
+    ///
+    /// - Parameter font: 文字字体
+    /// - Returns: 当前 label 对象
     func ay_setFont(_ font: UIFont) -> UILabel {
         self.font = font
         return self
     }
     
+    /// 设置 label frame
+    ///
+    /// - Parameter frame: label frame
+    /// - Returns:  当前 label 对象
     func ay_setFrame(_ frame: CGRect) -> UILabel {
         self.frame = frame
         return self
     }
     
+    /// 设置文字对齐样式
+    ///
+    /// - Parameter textAlignment: 文字对齐样式
+    /// - Returns: 当前 label 对象
     func ay_setTextAlignment(_ textAlignment: NSTextAlignment) -> UILabel {
         self.textAlignment = textAlignment
         return self
     }
 }
 
+
+// MARK: UITextLabel
 extension UITextField {
     
     class func ay_getTextField(_ placeholder: String) -> UITextField {
         let textField = UITextField()
         textField.placeholder = placeholder
+        textField.font = kTextFont
+        textField.textColor = kTextColor
         return textField
     }
     
@@ -81,6 +111,7 @@ extension UITextField {
     }
 }
 
+// MARK: UIButton
 extension UIButton {
     
     func ay_setFrame(_ frame: CGRect) -> UIButton {
@@ -160,6 +191,11 @@ extension UIButton {
     
     func ay_setBackGroundSelectedImage(_ imageName: String) -> UIButton {
         self.setBackgroundImage(UIImage(named: imageName), for: .selected)
+        return self
+    }
+    
+    func ay_setTouchUpInsideAction(_ target: Any?, action: Selector) -> UIButton {
+        self.addTarget(target, action: action, for: .touchUpInside)
         return self
     }
     
@@ -257,6 +293,13 @@ extension UIView {
         return self
     }
     
+    func ay_setCenter(_ center: CGPoint) -> UIView {
+        self.center = center
+        return self
+    }
+    
+    
+
     
     
     
@@ -274,7 +317,7 @@ extension UITableView {
     }
 }
 
-
+// MARK: String
 extension String {
     
     /// 获取文字的 size
