@@ -71,6 +71,64 @@ extension UILabel {
         self.textAlignment = textAlignment
         return self
     }
+    
+    override func ay_setMidX(_ midX: CGFloat) -> UILabel {
+        self.center = CGPoint(x: midX, y: self.ay_midY())
+        return self
+    }
+    
+    override func ay_setMidY(_ midY: CGFloat) -> UILabel {
+        self.center = CGPoint(x: self.ay_midX(), y: midY)
+        return self
+    }
+    
+    override func ay_setY(_ Y: CGFloat) -> UILabel {
+        var rect = self.frame
+        rect.origin.y = Y
+        self.frame = rect
+        return self
+    }
+    
+    override func ay_setX(_ X: CGFloat) -> UILabel {
+        var rect = self.frame
+        rect.origin.x = X
+        self.frame = rect
+        return self
+    }
+    
+    override func ay_setMaxY(_ maxY: CGFloat) -> UILabel {
+        var rect = self.frame
+        rect.origin.y = maxY - rect.size.height
+        self.frame = rect
+        return self
+    }
+    
+    override func ay_setMaxX(_ maxX: CGFloat) -> UILabel {
+        var rect = self.frame
+        rect.origin.x = maxX - rect.size.width
+        self.frame = rect
+        return self
+    }
+    
+    override func ay_setWidth(_ width: CGFloat) -> UILabel {
+        var rect = self.frame
+        rect.size.width = width
+        self.frame = rect
+        return self
+    }
+    
+    override func ay_setHeight(_ height: CGFloat) -> UILabel {
+        var rect = self.frame
+        rect.size.height = height
+        self.frame = rect
+        return self
+    }
+    
+    override func ay_setCenter(_ center: CGPoint) -> UILabel {
+        self.center = center
+        return self
+    }
+
 }
 
 
@@ -109,6 +167,64 @@ extension UITextField {
         self.borderStyle = borderStyle
         return self
     }
+    
+    override func ay_setMidX(_ midX: CGFloat) -> UITextField {
+        self.center = CGPoint(x: midX, y: self.ay_midY())
+        return self
+    }
+    
+    override func ay_setMidY(_ midY: CGFloat) -> UITextField {
+        self.center = CGPoint(x: self.ay_midX(), y: midY)
+        return self
+    }
+    
+    override func ay_setY(_ Y: CGFloat) -> UITextField {
+        var rect = self.frame
+        rect.origin.y = Y
+        self.frame = rect
+        return self
+    }
+    
+    override func ay_setX(_ X: CGFloat) -> UITextField {
+        var rect = self.frame
+        rect.origin.x = X
+        self.frame = rect
+        return self
+    }
+    
+    override func ay_setMaxY(_ maxY: CGFloat) -> UITextField {
+        var rect = self.frame
+        rect.origin.y = maxY - rect.size.height
+        self.frame = rect
+        return self
+    }
+    
+    override func ay_setMaxX(_ maxX: CGFloat) -> UITextField {
+        var rect = self.frame
+        rect.origin.x = maxX - rect.size.width
+        self.frame = rect
+        return self
+    }
+    
+    override func ay_setWidth(_ width: CGFloat) -> UITextField {
+        var rect = self.frame
+        rect.size.width = width
+        self.frame = rect
+        return self
+    }
+    
+    override func ay_setHeight(_ height: CGFloat) -> UITextField {
+        var rect = self.frame
+        rect.size.height = height
+        self.frame = rect
+        return self
+    }
+    
+    override func ay_setCenter(_ center: CGPoint) -> UITextField {
+        self.center = center
+        return self
+    }
+    
 }
 
 // MARK: UIButton
@@ -200,6 +316,64 @@ extension UIButton {
     }
     
     
+    override func ay_setMidX(_ midX: CGFloat) -> UIButton {
+        self.center = CGPoint(x: midX, y: self.ay_midY())
+        return self
+    }
+    
+    override func ay_setMidY(_ midY: CGFloat) -> UIButton {
+        self.center = CGPoint(x: self.ay_midX(), y: midY)
+        return self
+    }
+    
+    override func ay_setY(_ Y: CGFloat) -> UIButton {
+        var rect = self.frame
+        rect.origin.y = Y
+        self.frame = rect
+        return self
+    }
+    
+    override func ay_setX(_ X: CGFloat) -> UIButton {
+        var rect = self.frame
+        rect.origin.x = X
+        self.frame = rect
+        return self
+    }
+    
+    override func ay_setMaxY(_ maxY: CGFloat) -> UIButton {
+        var rect = self.frame
+        rect.origin.y = maxY - rect.size.height
+        self.frame = rect
+        return self
+    }
+    
+    override func ay_setMaxX(_ maxX: CGFloat) -> UIButton {
+        var rect = self.frame
+        rect.origin.x = maxX - rect.size.width
+        self.frame = rect
+        return self
+    }
+    
+    override func ay_setWidth(_ width: CGFloat) -> UIButton {
+        var rect = self.frame
+        rect.size.width = width
+        self.frame = rect
+        return self
+    }
+    
+    override func ay_setHeight(_ height: CGFloat) -> UIButton {
+        var rect = self.frame
+        rect.size.height = height
+        self.frame = rect
+        return self
+    }
+    
+    override func ay_setCenter(_ center: CGPoint) -> UIButton {
+        self.center = center
+        return self
+    }
+    
+
     
     
     
