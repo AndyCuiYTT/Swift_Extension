@@ -68,7 +68,7 @@ extension String{
     ///
     /// - Returns: 解码后的字符串
     func ay_base64Decode() -> String {
-        let data: Data = self.data(using: .utf8)!
+        let data: Data = Data(base64Encoded: self, options: .init(rawValue: 0))!
         return String.init(data: data, encoding: .utf8)!
     }
     
