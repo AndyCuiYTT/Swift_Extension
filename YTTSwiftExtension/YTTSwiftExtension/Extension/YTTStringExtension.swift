@@ -93,7 +93,7 @@ extension String {
     ///
     /// - Returns: 要判断的字符串
     func ytt_isNumber() -> Bool {
-        let predicare = NSPredicate(format: "^[0-9]*$")
+        let predicare = NSPredicate(format: "SELF MATCHES %@", "^[0-9]*$")
         return predicare.evaluate(with: self)
     }
     
@@ -101,7 +101,7 @@ extension String {
     ///
     /// - Returns: 要判断的字符串
     func ytt_isDecimal() -> Bool {
-        let predicare = NSPredicate(format: "^(([1-9][0-9]*)|(([0].d{1,2}|[1-9][0-9]*.d{1,2})))$")
+        let predicare = NSPredicate(format: "SELF MATCHES %@", "^(([1-9][0-9]*)|(([0].d{1,2}|[1-9][0-9]*.d{1,2})))$")
         return predicare.evaluate(with: self)
     }
 }
